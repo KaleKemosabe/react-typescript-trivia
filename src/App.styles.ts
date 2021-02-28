@@ -4,13 +4,14 @@ import BgImage from './images/quiz-bg.jpg';
 
 export const GlobalStyle = createGlobalStyle`
     html {
-        height: 100%;
+        min-height: 100vh;
     }
     body {
         background-image: url(${BgImage});
         background-size: cover;
+        background-position: right;
         margin: 0;
-        padding: 0 20px;
+        padding: 0 0.5rem;
         display: flex;
         justify-content: center;
     }
@@ -29,34 +30,35 @@ export const Wrapper = styled.div`
         color: #ffffff;
     }
     .score {
-        color: #ffffff;
+        color: #5f8d37;
+        background-color: #ffffff;
         font-size: 2rem;
-        margin: 0;
+        margin: 3rem 0 0.5rem 0;
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: 1px solid #99c259;
     }
     h1 {
         font-family: 'Pacifico', cursive;
-        background-image: linear-gradient(180deg, #ffffff, #87f1ff);
-        background-size: 100%;
-        background-clip: text;
-        // --webkit-background-clip: text;
-        // --webkit-text-fill-color: transparent;
-        // --moz-background-clip: text;
-        // --moz-text-fill-color: transparent;
-        filter: drop-shadow(2px 2px #333333);
-        font-size: 70px;
+        font-size: 3rem;
         text-align: center;
-        margin: 20px;
+        margin: 2rem 0.5rem;
     }
     .start, .next {
         cursor: pointer;
-        background: green;
-        border: 2px solid black;
+        background: linear-gradient(120deg, #99c259, #5f8d37);
+        border: none;
         border-radius: 5px;
+        font-size: 1.2rem;
         height: 40px;
         margin: 20px 0;
         padding: 0 40px;
     }
     .start {
-        max-width: 200px;
+        width: 50vw;
+        height: 4rem;
+        position: absolute;
+        top: 40vh;
+        z-index: 100;
     }
 `
