@@ -5,11 +5,12 @@ export const Wrapper = styled.div`
     background: #ffffff;
     border: 1px solid #99c259;
     border-radius: 5px;
+    margin: 0 0.5rem 1rem 0.5rem;
     padding: 1.2rem;
     text-align: center;
 
     p {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 `
 
@@ -29,6 +30,8 @@ export const ButtonWrapper = styled.div<ButtonWrapperProps>`
         margin: .2rem 0;
         width: 100%;
         height: 2.5rem;
+        border: 1px solid grey;
+        border-radius: 2px;
         background: ${({ correct, userClicked }) => 
             correct ? 'linear-gradient(90deg, #99c259, #5f8d37)' 
             : !correct && userClicked ? 'linear-gradient(90deg, rgba(247,30,30,1), rgba(255,0,0,1))' 

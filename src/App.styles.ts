@@ -1,9 +1,9 @@
-// import { url } from 'inspector';
 import styled, { createGlobalStyle } from 'styled-components';
 import BgImage from './images/quiz-bg.jpg';
 
 export const GlobalStyle = createGlobalStyle`
     html {
+        position: relative;
         min-height: 100vh;
     }
     body {
@@ -11,9 +11,9 @@ export const GlobalStyle = createGlobalStyle`
         background-size: cover;
         background-position: right;
         margin: 0;
-        padding: 0 0.5rem;
         display: flex;
         justify-content: center;
+        padding-bottom: 4rem;
     }
     * {
         box-sizing: border-box;
@@ -32,7 +32,7 @@ export const Wrapper = styled.div`
     .score {
         color: #5f8d37;
         background-color: #ffffff;
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin: 3rem 0 0.5rem 0;
         padding: 0.5rem;
         border-radius: 5px;
@@ -53,12 +53,12 @@ export const Wrapper = styled.div`
         height: 40px;
         margin: 20px 0;
         padding: 0 40px;
+        z-index: 100;
     }
     .start {
-        width: 50vw;
+        width: 15rem;
         height: 4rem;
         position: absolute;
         top: 40vh;
-        z-index: 100;
     }
 `
