@@ -25,7 +25,6 @@ const App = () => {
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
-  // const [showFinalScore, setShowFinalScore] = useState(false);
 
   console.log(questions);
 
@@ -78,7 +77,7 @@ const App = () => {
         ) : null}
         {!gameOver ? <p className="score">Score: {score}</p> : null}
         {loading && <p>Loading questions...</p>}
-        {!loading && !gameOver && (
+        {!loading && !gameOver && userAnswers.length !== TOTAL_QUESTIONS ? (
           <QuestionCard 
             questionNr={number + 1}
             totalQuestions={TOTAL_QUESTIONS}
@@ -87,7 +86,7 @@ const App = () => {
             userAnswer={userAnswers ? userAnswers[number] : undefined}
             callback={checkAnswer}
           />
-        )}
+        ) : null}
         {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ? (
           <button className="next" onClick={nextQuestion}>
             Next question
