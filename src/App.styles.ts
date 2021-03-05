@@ -61,4 +61,7 @@ export const Wrapper = styled.div`
         position: absolute;
         top: 40vh;
     }
+    .newQuestions {
+        font-size: 0.8rem;
+    }
 `

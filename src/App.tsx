@@ -32,7 +32,7 @@ const App = () => {
     setLoading(true);
     setGameOver(false);
 
-    const newQuestions = await fetchQuizQuestions(TOTAL_QUESTIONS, Difficulty.EASY);
+    const newQuestions = await fetchQuizQuestions(TOTAL_QUESTIONS, Difficulty.EASY && Difficulty.MEDIUM);
 
     setQuestions(newQuestions);
     setScore(0);
@@ -70,7 +70,7 @@ const App = () => {
     <Navbar />
     <GlobalStyle />
       <Wrapper>
-        {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
+        {gameOver ? (
           <button className="start" onClick={startTrivia}>
             Start Quiz
           </button>
@@ -90,6 +90,11 @@ const App = () => {
         {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ? (
           <button className="next" onClick={nextQuestion}>
             Next question
+          </button>
+        ) : null}
+        {userAnswers.length === TOTAL_QUESTIONS ? (
+          <button className="start" onClick={startTrivia}>
+            Play Again <br /><span className="newQuestions">new questions</span>
           </button>
         ) : null}
       </Wrapper>
